@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BrightMail — Request an @brightmail.uk address</title>
+  <title>Brightmail.uk Email Domain</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+
   <style>
-    :root{--bg:#f4f7fb;--card:#ffffff;--accent:#0b63d6;--muted:#6b7280;--radius:12px}
+    :root{--bg:#f4f7fb;--card:#ffffff;--accent:#0b63d6;--muted:#6b7280;--radius:12px;--overlay:rgba(17,24,39,0.55)}
     *{box-sizing:border-box}
     body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#eef3fb);margin:0;color:#111}
     .wrap{max-width:980px;margin:36px auto;padding:24px}
     header{display:flex;align-items:center;gap:16px}
     .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#0b63d6,#3aa0ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .logo img{width:56px;height:56px;object-fit:cover}
     h1{font-size:20px;margin:0}
     p.lead{margin:6px 0 24px;color:var(--muted)}
 
@@ -27,8 +33,6 @@
     label{font-size:13px;color:var(--muted)}
     input[type=text],input[type=email],textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #d7e6ff;font-size:14px}
     .hint{font-size:12px;color:#70809a}
-    .row{display:flex;gap:8px}
-    .row .col{flex:1}
     .actions{display:flex;align-items:center;gap:8px;margin-top:8px}
     button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
     button[disabled]{opacity:0.6;cursor:not-allowed}
@@ -36,6 +40,15 @@
     small.legal{display:block;color:#8693a6;margin-top:8px}
 
     footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+    .pill{display:inline-block;background:#eef4ff;color:#0b63d6;border:1px solid #d7e6ff;border-radius:999px;padding:4px 10px;font-size:12px}
+
+    .modal-overlay{position:fixed;inset:0;background:var(--overlay);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+    .modal{background:#fff;max-width:720px;width:100%;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.25)}
+    .modal header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eef1f6}
+    .modal .content{padding:16px 20px;max-height:70vh;overflow:auto}
+    .icon-btn{background:transparent;border:none;font-size:20px;cursor:pointer}
+    .show{display:flex}
 
     @media (max-width:900px){
       .grid{grid-template-columns:1fr}
@@ -46,10 +59,10 @@
   <div class="wrap">
     <header>
       <div class="logo">
-        <div class="mark">BM</div>
+        <img src="BML-800x800.png" alt="BrightMail logo">
         <div>
           <h1>BrightMail</h1>
-          <p class="lead">Request an <strong>@brightmail.uk</strong> email address — simple, neutral, and private.</p>
+          <p class="lead">Professional, secure, and private email hosting for individuals and small teams.</p>
         </div>
       </div>
     </header>
@@ -57,39 +70,49 @@
     <main class="grid">
       <section class="left">
         <div class="card provider-look">
-          <h2 style="margin-top:0">Looks like a generic email provider</h2>
-          <p class="hint">This page intentionally mimics a simple email-provider layout to make it familiar. It does <em>not</em> offer live mailboxes yet — it only accepts requests. If you're a friend or family member, fill the form to request a username and we'll set it up.</p>
+          <h2 style="margin-top:0">Welcome to BrightMail</h2>
+          <p style="color:var(--muted)">
+            BrightMail is a UK-based email service that provides clean, neutral <strong>@brightmail.uk</strong> addresses powered by <strong>Microsoft 365 for Business</strong>. Each account includes full Outlook and mobile access with enterprise-grade security.
+          </p>
 
           <div class="fake-inbox">
             <div style="display:flex;justify-content:space-between;align-items:center">
               <strong>example@brightmail.uk</strong>
-              <small class="hint">Status: pending</small>
+              <small class="hint">Mailbox: active</small>
             </div>
             <div class="fake-row" style="width:80%"></div>
             <div class="fake-row" style="width:60%"></div>
             <div class="fake-row" style="width:90%"></div>
           </div>
 
-          <p style="margin:12px 0 0;color:var(--muted)">What we'll ask for: desired username, your name, a contact email (so we can reach you), optional phone, and a short reason. We may email you a confirmation before creating the address.</p>
+          <p style="margin:12px 0 0;color:var(--muted)">
+            Hosting costs just <strong>£10 per month</strong> (£8 Microsoft 365 + £2 domain). To request your own address, simply fill out the short form. New accounts are reviewed manually to maintain service quality.
+          </p>
         </div>
 
         <div class="card" style="margin-top:16px">
-          <h3 style="margin-top:0">Why this is safe</h3>
+          <h3 style="margin-top:0">Why choose BrightMail?</h3>
           <ul style="margin:8px 0 0 18px;color:var(--muted)">
-            <li>We control the domain — no public provider ties.</li>
-            <li>Addresses are given manually to avoid abuse.</li>
-            <li>We'll follow a simple T&amp;C and can revoke addresses if misused.</li>
+            <li>Backed by Microsoft 365 infrastructure.</li>
+            <li>Personalised UK domain without big-tech branding.</li>
+            <li>Spam protection, privacy controls, and secure sign-in.</li>
+            <li>Simple monthly cost — no hidden fees.</li>
           </ul>
         </div>
       </section>
 
       <aside>
         <div class="card">
-          <h3 style="margin-top:0">Request a username</h3>
-          <form id="requestForm" method="POST" action="https://formspree.io/f/your-form-id">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0">Request your address</h3>
+            <span class="pill">£10 / month</span>
+          </div>
+          <small class="hint">Includes Microsoft 365 service (£8) + domain (£2).</small>
+
+          <form id="requestForm" method="POST" action="https://formspree.io/f/mgvpbpzg" style="margin-top:12px">
             <label for="username">Desired username</label>
             <input id="username" name="username" type="text" placeholder="e.g. alex or hello" required>
-            <small class="hint">This will become username@brightmail.uk if approved.</small>
+            <small class="hint">This becomes username@brightmail.uk if approved.</small>
 
             <label for="fullname">Full name</label>
             <input id="fullname" name="fullname" type="text" placeholder="Your name" required>
@@ -100,17 +123,20 @@
             <label for="phone">Phone (optional)</label>
             <input id="phone" name="phone" type="text" placeholder="+44 7...">
 
-            <label for="reason">Why do you want this address?</label>
-            <textarea id="reason" name="reason" rows="3" placeholder="One sentence is fine" required></textarea>
+            <label for="reason">Reason for requesting</label>
+            <textarea id="reason" name="reason" rows="3" placeholder="Briefly tell us how you’ll use it" required></textarea>
 
-            <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" name="agree" required> I agree to fair use and the <a href="#terms">terms</a>.</label>
+            <label style="display:flex;align-items:center;gap:8px">
+              <input type="checkbox" name="agree" required>
+              I agree to fair use and the <a href="#terms" id="termsLink">terms</a>.
+            </label>
 
             <div class="actions">
               <button id="submitBtn" type="submit">Send request</button>
               <button type="button" class="alt" id="demoBtn">Preview email</button>
             </div>
 
-            <small class="legal">We will store request info for the purpose of processing this request and contacting you. We won't share your data.</small>
+            <small class="legal">Information submitted is used only to set up your account and will never be shared or sold.</small>
           </form>
         </div>
 
@@ -121,12 +147,31 @@
     </main>
 
     <footer>
-      © BrightMail — neutral email addresses · Not a live commercial provider
+      © BrightMail — UK-based private email service powered by Microsoft 365
     </footer>
   </div>
 
+  <div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="modal">
+      <header>
+        <h3 id="termsTitle" style="margin:0">Terms of Use</h3>
+        <button class="icon-btn" id="closeTerms" aria-label="Close">✕</button>
+      </header>
+      <div class="content">
+        <p>By requesting or using an <strong>@brightmail.uk</strong> address, you agree to the following:</p>
+        <ul>
+          <li>Each address is hosted through Microsoft 365 for Business.</li>
+          <li>The service costs £10 per month (includes hosting and domain fees).</li>
+          <li>Abuse, spam, or illegal use will result in suspension.</li>
+          <li>Requests and account details are stored only for service management.</li>
+          <li>BrightMail is a small-scale private provider, not a large public service.</li>
+        </ul>
+        <p>Questions? Contact <a href="mailto:admin@brightmail.uk">admin@brightmail.uk</a>.</p>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Basic client validation + demo preview
     document.getElementById('demoBtn').addEventListener('click',function(){
       const u = document.getElementById('username').value.trim() || 'alex';
       const nm = document.getElementById('fullname').value.trim() || 'Alex Example';
@@ -134,16 +179,28 @@
       alert('Preview:\n' + addr + '\nName: ' + nm + '\n(This is only a preview — submit the form to request.)');
     });
 
-    // Optional: intercept submit and send via fetch to Formspree (uncomment & replace ID)
-    // const form = document.getElementById('requestForm');
-    // form.addEventListener('submit', async (e) => {
-    //   e.preventDefault();
-    //   const data = new FormData(form);
-    //   const btn = document.getElementById('submitBtn'); btn.disabled = true;
-    //   const res = await fetch(form.action, {method:'POST',body:data,headers:{'Accept':'application/json'}});
-    //   if (res.ok) { alert('Request sent — we will contact you.'); form.reset(); } else { alert('Submit failed.'); }
-    //   btn.disabled = false;
-    // });
+    const form = document.getElementById('requestForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) { alert('Request sent — we\'ll contact you soon.'); form.reset(); }
+        else { alert('Submit failed. Please try again later.'); }
+      } catch (err) {
+        alert('Network error. Please check your connection and retry.');
+      } finally { btn.disabled = false; }
+    });
+
+    const modal = document.getElementById('termsModal');
+    const openTerms = () => modal.classList.add('show');
+    const closeTerms = () => modal.classList.remove('show');
+    document.getElementById('termsLink').addEventListener('click', (e) => { e.preventDefault(); openTerms(); });
+    document.getElementById('closeTerms').addEventListener('click', closeTerms);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeTerms(); });
+    if (location.hash === '#terms') openTerms();
   </script>
 </body>
 </html>
